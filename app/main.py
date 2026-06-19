@@ -11,6 +11,13 @@ from agent.comparator import compare_assessments
 
 app = FastAPI()
 
+@app.get("/")
+def root():
+    return {
+        "message": "SHL Assessment Recommendation Agent is running",
+        "docs": "/docs",
+        "health": "/health"
+    }
 @app.get("/health")
 def health():
     return {
